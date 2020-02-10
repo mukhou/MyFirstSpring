@@ -13,8 +13,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(EmployeeController.BASE_URL)
 @Slf4j
 public class EmployeeController {
+
+    public static final String BASE_URL = "/employees";
 
     private final EmployeeService employeeService;
 
@@ -22,13 +25,13 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping(path="/employee/{id}", produces = "application/json")
+    @GetMapping("{id}")
     public Employee getById(@PathVariable("id") Long id){
         log.info("Inside employee controller");
         return employeeService.findById(id);
     }
 
-    @PostMapping(path = "/employee", consumes = "application/json", produces = "application/json")
+    @PostMapping()
     public Employee create(@RequestBody Employee employee){
         return employeeService.add(employee);
 
