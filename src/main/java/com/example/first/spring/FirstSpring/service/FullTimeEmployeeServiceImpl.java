@@ -11,6 +11,10 @@ import com.example.first.spring.FirstSpring.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Service
 @Qualifier("fullTime")
 public class FullTimeEmployeeServiceImpl implements EmployeeService {
@@ -24,6 +28,11 @@ public class FullTimeEmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee findById(Long id) {
         return employeeRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Employee> findAll(){
+        return (List<Employee>) employeeRepository.findAll();
     }
 
     @Override
