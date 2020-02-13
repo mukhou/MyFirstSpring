@@ -1,4 +1,4 @@
-package cucumber.examples.java;
+package cucumber.examples;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;

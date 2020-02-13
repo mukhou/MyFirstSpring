@@ -1,4 +1,4 @@
-package cucumber.examples.java;/*
+package cucumber.examples;/*
 User: Urmi
 Date: 2/13/2020 
 Time: 6:14 PM
