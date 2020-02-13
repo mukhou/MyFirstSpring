@@ -63,6 +63,21 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
+		<!--Cucumber-->
+		<!--Needed to write step definitions -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.6</version>
+			<scope>test</scope>
+		</dependency>
+		<!--Needed to execute cucumber tests using junit -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.6</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
