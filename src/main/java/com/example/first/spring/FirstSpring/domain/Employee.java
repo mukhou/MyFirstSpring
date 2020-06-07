@@ -16,12 +16,13 @@ import javax.persistence.Id;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder(toBuilder = true)
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @ApiModelProperty(value = "This is the first name", required = true)
     private String firstName;
     @ApiModelProperty(value = "This is the last` name", required = true)
