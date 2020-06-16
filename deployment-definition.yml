@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firstspring
+  labels:
+    app: firstspring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: firstspring
+  template:
+    metadata:
+      labels:
+        app: firstspring
+    spec:
+      containers:
+      - name: firstspring
+        image: mukhou/firstspring
