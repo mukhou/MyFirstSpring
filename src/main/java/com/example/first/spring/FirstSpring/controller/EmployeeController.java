@@ -7,6 +7,7 @@ Time: 12:40 PM
 package com.example.first.spring.FirstSpring.controller;
 
 import com.example.first.spring.FirstSpring.domain.Employee;
+import com.example.first.spring.FirstSpring.exception.EmployeeNotFoundException;
 import com.example.first.spring.FirstSpring.service.EmployeeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,6 +35,10 @@ public class EmployeeController {
     @GetMapping("{id}")
     public Employee getById(@PathVariable("id") Long id){
         log.info("Inside employee controller");
+        Employee emp = employeeService.findById(id);
+        if(emp == null){
+            throw new EmployeeNotFoundException(id);
+        }
         return employeeService.findById(id);
     }
 
