@@ -8,6 +8,7 @@ package com.example.first.spring.FirstSpring.service;
 
 import com.example.first.spring.FirstSpring.domain.Employee;
 import com.example.first.spring.FirstSpring.repository.EmployeeRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 @Service
 @Qualifier("fullTime")
 public class FullTimeEmployeeServiceImpl implements EmployeeService {
@@ -37,6 +39,7 @@ public class FullTimeEmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee add(Employee employee) {
+        log.info("############ inside add method of fulltime employee service");
         employeeRepository.save(employee);
         return employeeRepository.findByFirstName(employee.getFirstName());
     }
