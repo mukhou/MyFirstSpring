@@ -24,6 +24,7 @@ import java.util.List;
 // (that is, to pull updated values from the Config Server) by annotating the controller with the
 // Spring Cloud Config @RefreshScope and then triggering a refresh event(POST: http://localhost:8080/actuator/refresh)
 @RefreshScope
+//Note: Look out for this line during app startup: ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:9000
 @RestController
 @RequestMapping(EmployeeController.BASE_URL)
 @Slf4j
