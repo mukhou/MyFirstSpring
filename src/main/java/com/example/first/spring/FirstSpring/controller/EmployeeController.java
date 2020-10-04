@@ -72,6 +72,7 @@ public class EmployeeController {
     //service to test spring config server
     @GetMapping("/message/")
     public String getMessage(){
+        System.out.println("#############");
         return this.message;
     }
 
