@@ -2,19 +2,19 @@ To run this application:
 
 Run the main class: FirstSpringApplication
 
-Steps to create docker image and run container from command prompt:
+#Steps to create docker image and run container from command prompt:
 
-#Approach 1
+**Approach 1**
 1. cd into the root folder which has Docker file and run: docker build -t mukhou/firstspring .
 2. run: docker run -p 8080:8080 mukhou/firstspring
 3. Verify: http://localhost:8080/employees
 
 
-#Approach 2(use docker-compose)
+**Approach 2**(use docker-compose)
 Or, from command prompt, cd into the root folder which has Docker file and
 directly run this command: docker-compose up
 
-Steps to run this application on kubernetes:
+#Steps to run this application on kubernetes:
 1. build the docker image following above section(step #1)
 2. publish image to docker hub: docker push mukhou/firstspring
 3. cd into the root folder which has deployment and service file and run:
@@ -25,6 +25,16 @@ Steps to run this application on kubernetes:
 6. verify pods, replicas, services and deployment created: kubeclt get all
 7. forward port to access application from cluster: kubectl port-forward svc/firstspring 8080:8080
 8. Verify: http://localhost:8080/employees
+
+**Notes on configmap**
+1. Create the configmap first before creating the other objects
+2. Once all objects are created, login to pod (kubectl exec -it pod/<podname> sh) and navigate to /etcd/config
+   where you will see the below data being added from volume mounts:
+   
+   lrwxrwxrwx    1 root     root            11 Jun  5 20:34 tool -> ..data/tool   
+   lrwxrwxrwx    1 root     root            15 Jun  5 20:34 database -> ..data/database
+
+
 
 
 

@@ -17,3 +17,14 @@ spec:
       containers:
       - name: firstspring
         image: mukhou/firstspring
+        volumeMounts:
+          # `name` here must match the name from the volumes section of this pod
+          - name: firstvol
+            mountPath: /etc/config
+      # Add the ConfigMap as a volume to the Pod
+      volumes:
+        # `name` here must match the name specified in the volume mount
+        - name: firstvol
+          configMap:
+            # `name` here must match the name of the ConfigMap you want to use
+            name: firstcm

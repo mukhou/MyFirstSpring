@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: firstcm
+data:
+  database: inmemory
+  tool: h2
