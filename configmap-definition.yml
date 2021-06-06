@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: firstcm
+data:
+  # app.properties is the key here, which becomes the file name mounted on the pod via volume mount
+  # and the contents of the file are the values separated by the pipe operator
+  app.properties: |
+    appname: springboot
+    database: inmemory
+    tool: h2
+    type: singlecontainer
