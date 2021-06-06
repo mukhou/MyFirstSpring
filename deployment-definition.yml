@@ -20,7 +20,8 @@ spec:
         volumeMounts:
           # `name` here must match the name from the volumes section of this pod
           - name: firstvol
-            mountPath: /etc/config
+            mountPath: /etc/config/app.properties
+            subPath: app.properties
       # Add the ConfigMap as a volume to the Pod
       volumes:
         # `name` here must match the name specified in the volume mount

@@ -26,13 +26,7 @@ directly run this command: docker-compose up
 7. forward port to access application from cluster: kubectl port-forward svc/firstspring 8080:8080
 8. Verify: http://localhost:8080/employees
 
-**Notes on configmap**
-1. Create the configmap first before creating the other objects
-2. Once all objects are created, login to pod (kubectl exec -it pod/<podname> sh) and navigate to /etcd/config
-   where you will see the below data being added from volume mounts:
-   
-   lrwxrwxrwx    1 root     root            11 Jun  5 20:34 tool -> ..data/tool   
-   lrwxrwxrwx    1 root     root            15 Jun  5 20:34 database -> ..data/database
+
 
 
 
