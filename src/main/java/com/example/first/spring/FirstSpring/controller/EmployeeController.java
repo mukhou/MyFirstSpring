@@ -41,6 +41,9 @@ public class EmployeeController {
     //NOTE: if you don't want to use the @Qualifier annotation, change the param name of the below constructor from
     //employeeService to "fullTimeEmployeeServiceImpl". Doing so will enable Spring to use reflection
     //to find out the corresponding impl class, FullTimeEmployeeServiceImpl.java in this case.
+    //This is "Autowiring by Name" feature of Spring, where
+    // Spring looks for a bean with the same name as the property that needs to be autowired.
+    // Ref: https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-autowire
     //IMP: the name "fullTimeEmployeeService" won't work as the actual implementation class
     //has an "Impl" suffix to it.
     public EmployeeController(@Qualifier("fullTime") EmployeeService employeeService) {
