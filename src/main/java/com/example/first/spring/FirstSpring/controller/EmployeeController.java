@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(description = "This is the Employee Controller")
+@Api("This is the Employee Controller")
 //this is needed to enable Spring to force a bean to refresh its configuration
 // (that is, to pull updated values from the Config Server) by annotating the controller with the
 // Spring Cloud Config @RefreshScope and then triggering a refresh event(POST: http://localhost:8080/actuator/refresh)
