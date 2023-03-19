@@ -31,18 +31,5 @@ public class SwaggerConfig {
                 .pathMapping("/");
     }
 
-    private ApiInfo metaData(){
-        Contact contact = new Contact("Urmi Mukhopadhyay", "https://mukhou", "banerjeeurmi@gmail.com");
-        return new ApiInfo(
-                "Spring Pet Clinic App",
-                "Spring Pet Clinic App",
-                "1.0",
-                "http.//dummy",
-                contact,
-                "l1",
-                "http://dummy",
-                new ArrayList<>());
-
-    }
 
 }
